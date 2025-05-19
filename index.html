@@ -66,13 +66,24 @@
                 transform: scale(1.4);
             }
         }
+        #foto-kami {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            display: none; /* Sembunyikan foto di awal */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Pesan Khusus Untukmu</h1>
         <div id="message">Klik tombol di bawah untuk melihat pesanku...</div>
-        <button onclick="tampilkanPesan()">Buka Pesan</button>
+        
+        <!-- Tambahkan elemen untuk foto yang awalnya tersembunyi -->
+        <img id="foto-kami" alt="Foto Kami Berdua" src="../assets/images/fotokudanistri.jpeg">
+        
+        <button id="tombol-pesan" onclick="tampilkanPesan()">Buka Pesan Lebih Lanjut</button>
         <div class="footer">Dari suami yang sangat mencintaimu</div>
     </div>
 
@@ -80,7 +91,7 @@
         function tampilkanPesan() {
             // Logika untuk menentukan waktu
             let waktu = new Date().getHours();
-            let nama = "Atqiya Baroroh";  // Personalisasi dengan nama istri Anda
+            let nama = "Istriku";  // Personalisasi dengan nama istri Anda
             let pesan = "";
             
             // Logika if-else berdasarkan waktu
@@ -107,6 +118,12 @@
             
             // Tampilkan pesan
             document.getElementById("message").innerHTML = pesan;
+            
+            // Tampilkan foto
+            document.getElementById("foto-kami").style.display = "block";
+            
+            // Ubah teks tombol atau sembunyikan tombol
+            document.getElementById("tombol-pesan").style.display = "none";
         }
     </script>
 </body>
