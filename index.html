@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Sayang Untukmu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 80%;
+            width: 500px;
+        }
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        #message {
+            font-size: 24px;
+            margin: 30px 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .heart {
+            color: #e74c3c;
+            font-size: 1.2em;
+            animation: beat 1s infinite alternate;
+            display: inline-block;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+        @keyframes beat {
+            to {
+                transform: scale(1.4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pesan Khusus Untukmu</h1>
+        <div id="message">Klik tombol di bawah untuk melihat pesanku...</div>
+        <button onclick="tampilkanPesan()">Buka Pesan</button>
+        <div class="footer">Dari suami yang sangat mencintaimu</div>
+    </div>
+
+    <script>
+        function tampilkanPesan() {
+            // Logika untuk menentukan waktu
+            let waktu = new Date().getHours();
+            let nama = "Atqiya Baroroh";  // Personalisasi dengan nama istri Anda
+            let pesan = "";
+            
+            // Logika if-else berdasarkan waktu
+            if (waktu >= 5 && waktu < 11) {
+                pesan = `Selamat pagi ${nama} tersayang <span class="heart">❤️</span><br><br>`;
+                pesan += "Di pagi yang cerah ini, aku ingin mengingatkanmu betapa aku sangat menyayangimu.<br>";
+                pesan += "Aku bersyukur memilikimu dalam hidupku.";
+            } else if (waktu >= 11 && waktu < 15) {
+                pesan = `Selamat siang ${nama} tersayang <span class="heart">❤️</span><br><br>`;
+                pesan += "Di tengah kesibukan hari ini, aku menyempatkan diri untuk mengatakan betapa aku sangat menyayangimu.<br>";
+                pesan += "Kamu selalu ada di pikiranku.";
+            } else if (waktu >= 15 && waktu < 19) {
+                pesan = `Selamat sore ${nama} tersayang <span class="heart">❤️</span><br><br>`;
+                pesan += "Sore ini aku teringat betapa beruntungnya aku memilikimu.<br>";
+                pesan += "Aku sangat menyayangimu lebih dari yang kamu tahu.";
+            } else {
+                pesan = `Selamat malam ${nama} tersayang <span class="heart">❤️</span><br><br>`;
+                pesan += "Sebelum tidur, aku ingin kamu tahu bahwa aku sangat menyayangimu.<br>";
+                pesan += "Mimpi indah, sayangku.";
+            }
+            
+            // Tambahkan pesan tambahan
+            pesan += "<br><br>Aku sayang kamu hari ini, besok, dan selamanya <span class=\"heart\">❤️</span>";
+            
+            // Tampilkan pesan
+            document.getElementById("message").innerHTML = pesan;
+        }
+    </script>
+</body>
+</html>
